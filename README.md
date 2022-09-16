@@ -18,8 +18,11 @@ your own wallet.
 
 ## How this tool works?
 
-Just run the Dockerized version of this tool with the proper parameters 
-`docker run bittrap/tools <transaction> <wif> <address>`.
+Just run the Dockerized version of this tool with the proper parameters: 
+
+```
+docker run bittrap/tools <transaction> <wif> <address>
+```
 
 **Example (using testnet values)**
 
