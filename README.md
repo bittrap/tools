@@ -14,8 +14,7 @@ your own wallet.
   1. Broadcast `transaction.txt` in the Bitcoin network to send fund to the proxy wallet.
   2. Broadcast a new transaction to send the proxy wallet funds to a Bitcoin address that belongs to you. 
      You'll need the private key provided in `wif.txt` to do this. 
-
-**The scripts provided here will help you to transfer all funds in an easy way.**
+* **The scripts provided here will help you to transfer all funds in an easy way.**
 
 ## How this tool works?
 
