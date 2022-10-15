@@ -21,7 +21,7 @@ your own wallet.
 Just run the Dockerized version of this tool with the proper parameters: 
 
 ```
-docker run bittrap/tools <transaction> <wif> <address>
+docker run bittrap/tools <transaction> <wif> <your-bitcoin-address>
 ```
 
 **Example (using testnet values)**
