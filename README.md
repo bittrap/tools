@@ -5,7 +5,7 @@ your own wallet.
 
 ## How BitTrap works?
 
-* BitTrap installs a Bitcoin signed transaction with a bounty in every device of an organization.
+* BitTrap generates a Bitcoin signed transaction with a bounty for every device of an organization.
 * This transaction (when it's broadcast in the Bitcoin network) will transfer the bounty to a "proxy wallet".
 * If you hack a device where BitTrap is installed, you'll find 2 files:
   1. `transaction.txt`: The signed Bitcoin transaction with a risk-adjusted amount of BTC (the device bounty).
@@ -21,16 +21,28 @@ your own wallet.
 Just run the Dockerized version of this tool with the proper parameters: 
 
 ```
-docker run bittrap/tools <transaction> <wif> <your-bitcoin-address>
+docker run bittrap/tools transferto <your-btc-address> <wif> 
+```
+
+Notice that we are not using the transaction stored in `transaction.txt`. 
+This is because all transactions are periodically regenerated, encrypted and stored in the cloud.
+The above command just downloads the last signed valid transaction, broadcast it, 
+and sends funds to your Bitcoin address. This is the recommended way to transfer funds.
+
+If you prefer not to access the BitTrap server to download the transaction, 
+you can always use the content stored in `transaction.txt`:
+
+```
+docker run bittrap/tools transferto <your-btc-address> <wif> --transaction <transaction>
 ```
 
 **Example (using testnet values)**
 
 ```
-docker run bittrap/tools \ 
-   020000000001019203bd6e43cd84 ... bc0bf27c5fe13ccf29cf400000000 \
+docker run bittrap/tools transferto \ 
+   tb1qat7xdhvnp8zwyzp453u273v2qnfqe8yk5zlfer \
    cRLEa65yZEHfXwkeYWMuhNYEM98sMKADBgH7SgdjM5ngdxHYyUwn \
-   tb1qat7xdhvnp8zwyzp453u273v2qnfqe8yk5zlfer
+   --transaction 020000000001019203bd6e43cd84 ... bc0bf27c5fe13ccf29cf400000000 \
 ```
 
 ## About BitTrap

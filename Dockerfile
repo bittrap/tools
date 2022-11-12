@@ -13,8 +13,10 @@ RUN apt-get update && \
     echo -e "Checksum OK"
 
 RUN python -m pip install --upgrade pip && \
-    pip3 install --user pyqt5==5.15.7 && \
+    pip3 install --user base58==2.1.1 && \
     pip3 install --user cryptography==37.0.4 && \
+    pip3 install --user eciespy==0.3.12 && \
+    pip3 install --user pyqt5==5.15.7 && \
     pip3 install --user Electrum-${ELECTRUM_VERSION}.tar.gz && \
     rm -f Electrum-${ELECTRUM_VERSION}.tar.gz
 
@@ -22,4 +24,4 @@ WORKDIR /root
 USER root
 COPY . /root
 
-ENTRYPOINT ["python", "transfer.py"]
+ENTRYPOINT ["python", "main.py"]
