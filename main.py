@@ -7,7 +7,7 @@ from commands import *
 
 
 PROGRAM_NAME = 'bittrap/tools'
-VERSION = '2.0.0'
+VERSION = '2.1.0'
 
 os.environ["PATH"] += os.pathsep + '/root/.local/bin'
 
@@ -29,6 +29,7 @@ def main():
     commands = [
         DownloadCommand,
         TransferToCommand,
+        TransferCommand,
     ]
     for command in commands:
         command(sub_parsers)
