@@ -29,7 +29,6 @@ def main():
     commands = [
         DownloadCommand,
         TransferToCommand,
-        TransferCommand,
     ]
     for command in commands:
         command(sub_parsers)

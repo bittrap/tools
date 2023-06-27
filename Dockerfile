@@ -17,7 +17,6 @@ RUN python -m pip install --upgrade pip && \
     pip3 install --user cryptography==37.0.4 && \
     pip3 install --user eciespy==0.3.13 && \
     pip3 install --user pyqt5==5.15.7 && \
-    pip3 install --user gql[requests]==3.4.0 && \
     pip3 install --user Electrum-${ELECTRUM_VERSION}.tar.gz && \
     rm -f Electrum-${ELECTRUM_VERSION}.tar.gz
 
